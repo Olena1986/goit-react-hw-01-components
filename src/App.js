@@ -1,7 +1,11 @@
-import Profile from './components/profile'
-import Statistics from './components/statistics.jsx'
+import Profile from './components/profile/profile'
+import Statistics from './components/statistics/statistics'
+import FriendList from './components/friends/friendList';
+import TransactionHistory from 'components/transaction/transactionHistory';
 import user from './assets/user.json'
 import data from './assets/data.json'
+import friends from './assets/friends.json'
+import transactions from './assets/transactions.json'
 
 
 
@@ -16,9 +20,9 @@ import data from './assets/data.json'
   stats={user.stats}
      />
 
-      
-      <Statistics title="Upload stats" stats={data} />
-      <Statistics stats={data} />
+       <Statistics title="Upload stats" stats={data} />
+       <FriendList friends={friends} />
+       <TransactionHistory items={transactions} />
     </>
    );
  
