@@ -1,31 +1,54 @@
 import styled from 'styled-components'
 
+
+
+
 const Card = styled.div `
 display: block;
+text-align: center;
     width: 300px;
     height: 100%;
-    margin: 0 auto;
     border: 2px solid black;
-	padding: 35px 20px;
 	border-radius: 8px;
-	background-color: ${props =>
-		props.cardIndex % 2 === 0 ? 'lightblue' : 'white'};`
+    margin:0 auto;
+    
+	`
 
 const Avatar = styled.div`
 display:block;
 text-align:center;
 `
+const Img = styled.img`
+ width: 100px;
+ height: 100px;
+  border-radius: 50%;
+   border: 2px solid black; 
+   margin-top:20px;
+`
+const UserName = styled.p`
+color: black;
+font-weight: bold;
+`
+const UserInfo = styled.p`
+color:grey;
+font-weight: bold;
+`
 const List = styled.ul`
-list-style:none;
-display:flex;
-justify-content:space-between;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
 margin: 0 auto;
 padding:0;
+
 
 `
 const Item = styled.li`
 display:flex;
 flex-direction:column;
+align-items:center;
+border: 1px solid #5c5454;
 
 `
 const Text = styled.span`
@@ -34,9 +57,13 @@ color: rgb(110 111 119);
 font-weight: bold;
 `
 export const ProfilStyle = {
+   
     Card,
     Avatar,
     List,
     Item,
-    Text
+    Text,
+    Img,
+    UserName,
+    UserInfo
 }

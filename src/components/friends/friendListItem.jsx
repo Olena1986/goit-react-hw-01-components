@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FriendStyle }  from './friends.styled';
 
 const FriendListItem = ({ avatar, name, isOnline }) => {
-  const statusClass = isOnline ? 'online' : 'offline';
+ 
 
   return (
-    <li className="item">
-      <span className={`status ${statusClass}`}></span>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
-    </li>
+    <FriendStyle.FriendItem>
+      <FriendStyle.Status status={isOnline}></FriendStyle.Status>
+      <img  src={avatar} alt="User avatar" width="48" />
+      <p>{name}</p>
+    </FriendStyle.FriendItem>
   );
 };
 

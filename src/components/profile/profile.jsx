@@ -6,33 +6,37 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
   const { followers, views, likes } = stats;
 
   return (
-    <ProfilStyle.Card>
-      <ProfilStyle.Avatar>
-        <img
-          src={avatar}
-          alt="User avatar"
-          style={{ width: '100px', height: '100px', borderRadius: '50%', border: '2px solid black' }} 
-        />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
-      </ProfilStyle.Avatar>
 
-      <ProfilStyle.List>
-        <ProfilStyle.Item>
-          <ProfilStyle.Text>Followers</ProfilStyle.Text>
-          <span>{followers}</span>
-        </ProfilStyle.Item>
-        <ProfilStyle.Item>
-          <ProfilStyle.Text>Views</ProfilStyle.Text>
-          <span>{views}</span>
-        </ProfilStyle.Item>
-        <ProfilStyle.Item>
-          <ProfilStyle.Text>Likes</ProfilStyle.Text>
-          <span className="quantity">{likes}</span>
-        </ProfilStyle.Item>
-      </ProfilStyle.List>
-    </ProfilStyle.Card>
+      <ProfilStyle.Card>
+        <ProfilStyle.Avatar>
+  
+            <ProfilStyle.Img
+              src={avatar}
+              alt="User avatar"
+            />
+         
+          <ProfilStyle.UserName>{username}</ProfilStyle.UserName>
+          <ProfilStyle.UserInfo>@{tag}</ProfilStyle.UserInfo>
+          <ProfilStyle.UserInfo>{location}</ProfilStyle.UserInfo>
+        </ProfilStyle.Avatar>
+  
+        <ProfilStyle.List>
+          <ProfilStyle.Item>
+            <ProfilStyle.Text>Followers</ProfilStyle.Text>
+            <span>{followers}</span>
+          </ProfilStyle.Item>
+          <ProfilStyle.Item>
+            <ProfilStyle.Text>Views</ProfilStyle.Text>
+            <span>{views}</span>
+          </ProfilStyle.Item>
+          <ProfilStyle.Item>
+            <ProfilStyle.Text>Likes</ProfilStyle.Text>
+            <span>{likes}</span>
+          </ProfilStyle.Item>
+        </ProfilStyle.List>
+      </ProfilStyle.Card>
+    
+    
   );
 };
 Profile.propTypes = {

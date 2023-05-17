@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TransStyle } from './transaction.styled';
 
 const TransactionHistory = ({ items }) => {
   return (
-    <table className="transaction-history">
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+    <TransStyle.Table>
+      <TransStyle.TableHeader>
+        <TransStyle.TableRow>
+          <TransStyle.TableHeaderCell>Type</TransStyle.TableHeaderCell>
+          <TransStyle.TableHeaderCell>Amount</TransStyle.TableHeaderCell>
+          <TransStyle.TableHeaderCell>Currency</TransStyle.TableHeaderCell>
+        </TransStyle.TableRow>
+      </TransStyle.TableHeader>
       <tbody>
         {items.map((item) => (
           <tr key={item.id}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
+            <TransStyle.TableCell>{item.type}</TransStyle.TableCell>
+            <TransStyle.TableCell>{item.amount}</TransStyle.TableCell>
+            <TransStyle.TableCell>{item.currency}</TransStyle.TableCell>
           </tr>
         ))}
       </tbody>
-    </table>
+    </TransStyle.Table>
   );
 };
 

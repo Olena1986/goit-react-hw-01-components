@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { StatisticStyle } from './statistics.styled'
+
+
+
 const Statistics = ({ title, stats }) => {
     return (
-                <section className="statistics">
-                    {title && <h2 className="title">{title}</h2>}
-                    <ul>
+                <StatisticStyle.StatSection>
+                    {title && <StatisticStyle.StatTitle>{title}</StatisticStyle.StatTitle>}
+                    <StatisticStyle.StatTable>
                         {stats.map((stat) => (
-                            <li key={stat.id}>
+                            <StatisticStyle.StatItem key={stat.id} >
                                 <span>{stat.label}</span>
                                 <span>{stat.percentage}%</span>
-                            </li>
+                            </StatisticStyle.StatItem>
                         ))}
-                    </ul>
-                </section>
+                    </StatisticStyle.StatTable>
+                </StatisticStyle.StatSection>
             );
         };
 Statistics.propTypes = {
